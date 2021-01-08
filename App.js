@@ -1,13 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Linking } from 'react-native';
+import PlayScreen from './PlayScreen';
 
 export default function App() {
-  return (
+  const [playMode, setPlayMode] = useState(false);
+  return playMode ? (
+    <PlayScreen/>
+  ) : (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <Text style={styles.header}>Rock Paper Scissors</Text>
+      <Text style={styles.emoji}>✊ ✋ ✌️</Text>
+      <View style={styles.btnContainer}>
+        <Button
+          onPress={() =>{
+            setPlayMode(true);
+          }}
+          title = "Play"
+          />
+      </View>
+      <Text
+        style ={styles.srcCode}
+        onPress={() =>
+          Linking.openURL('google.com')
+        }>
+        Link
+        </Text>
+          </View> 
   );
 }
 
@@ -17,5 +36,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  header:{
+    fontSize:28,
+    margin 10,
+  },
+  emoji: {
+    fontSize:60,
+  },
+  btnContainer:{
+    marginTop:60,
+    width: 240,
+  },
+  srcCode:{
+    position: 'absolute',
+    bottom: 20,
+    color: '#0069c0',
+    textDecorationLine: 'underline'
   },
 });
