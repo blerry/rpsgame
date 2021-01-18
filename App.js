@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Button, Linking } from 'react-native';
 import PlayScreen from './PlayScreen';
 
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   header:{
     fontSize:28,
-    margin 10,
+    margin: 10,
   },
   emoji: {
     fontSize:60,

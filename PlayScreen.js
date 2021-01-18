@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 
-const scissors = require('./signs/scissors.png');
-const paper = require('./signs/paper.png');
-const rock = require('./signs/rock.png');
+const scissors = require('./scissors.png');
+const paper = require('./paper.png');
+const rock = require('./rock.png');
 
-const bigColors = ['#1abc9c', '#3498db', '#9b59b6'];
+const bgColors = ['#1abc9c', '#3498db', '#9b59b6'];
 
 //get random emoji
 const randomEmoji = () => {
